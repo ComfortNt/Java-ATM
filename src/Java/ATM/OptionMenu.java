@@ -10,7 +10,7 @@ public class OptionMenu extends Account {
 	Scanner menuInput = new Scanner(System.in);
 	DecimalFormat moneyformat = new DecimalFormat("'$'###,##0.00");
 	
-	HashMap<Integer , Integer> data = new HashMap<>();
+	HashMap<Integer , Integer> data = new HashMap<Integer , Integer>();
 	
 	public void getLogin() throws IOException{
 		
@@ -31,10 +31,10 @@ public class OptionMenu extends Account {
 				setPinNumber(menuInput.nextInt());
 				
 			}catch(Exception e) {
-				
 				System.err.print( "\n" +"Invalid Character(s) . Only Numbers." +"\n");
 				x=2;
-				
+			}
+			
 				int cn = getCustomerNumber();
 				int pn = getPinNumber();
 				
@@ -42,7 +42,7 @@ public class OptionMenu extends Account {
 					getAccountType();
 				}else {
 					System.out.println("\n" + "Wrong Customer Number or Pin" + "\n");
-				}
+				
 			}
 		}while(x == 1);
 		
